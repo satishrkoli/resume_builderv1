@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Builder</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 80px;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 10px 5px 10px 0;
+            cursor: pointer;
+        }
+
+        #resume {
+            margin-top: 30px;
+            padding: 30px;
+            border: 1px solid #aaa;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Online Resume Builder</h1>
+
+    <h2>Personal Details</h2>
+
+    <input type="text" id="name" placeholder="Full Name">
+
+    <input type="email" id="email" placeholder="Email">
+
+    <input type="text" id="phone" placeholder="Phone Number">
+
+    <h2>Education</h2>
+
+    <textarea id="education"
+        placeholder="Enter your education details"></textarea>
+
+    <h2>Skills</h2>
+
+    <textarea id="skills"
+        placeholder="Example: Python, Java, HTML, CSS, MySQL"></textarea>
+
+    <h2>Projects</h2>
+
+    <textarea id="projects"
+        placeholder="Enter your projects"></textarea>
+
+    <h2>Experience</h2>
+
+    <textarea id="experience"
+        placeholder="Enter internship or experience"></textarea>
+
+    <button onclick="generateResume()">Generate Resume</button>
+
+    <button onclick="window.print()">Print / Save as PDF</button>
+
+
+    <div id="resume" class="hidden">
+
+        <h1 id="rname"></h1>
+
+        <p>
+            <b>Email:</b> <span id="remail"></span>
+            <br>
+            <b>Phone:</b> <span id="rphone"></span>
+        </p>
+
+        <hr>
+
+        <h2>Education</h2>
+        <p id="reducation"></p>
+
+        <h2>Skills</h2>
+        <p id="rskills"></p>
+
+        <h2>Projects</h2>
+        <p id="rprojects"></p>
+
+        <h2>Experience</h2>
+        <p id="rexperience"></p>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function generateResume() {
+
+    document.getElementById("rname").innerText =
+        document.getElementById("name").value;
+
+    document.getElementById("remail").innerText =
+        document.getElementById("email").value;
+
+    document.getElementById("rphone").innerText =
+        document.getElementById("phone").value;
+
+    document.getElementById("reducation").innerText =
+        document.getElementById("education").value;
+
+    document.getElementById("rskills").innerText =
+        document.getElementById("skills").value;
+
+    document.getElementById("rprojects").innerText =
+        document.getElementById("projects").value;
+
+    document.getElementById("rexperience").innerText =
+        document.getElementById("experience").value;
+
+    document.getElementById("resume").classList.remove("hidden");
+}
+
+</script>
+
+</body>
+</html>
